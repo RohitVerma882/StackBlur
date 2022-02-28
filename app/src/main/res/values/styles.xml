@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+		<item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryVariant">#1E88E5</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+		<item name="colorSecondary">#2196F3</item>
+        <item name="colorSecondaryVariant">#1E88E5</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/black</item>
+		<item name="android:colorBackground">@android:color/white</item>
+		<item name="colorOnBackground">@android:color/black</item>
+		
+		<item name="android:statusBarColor">?colorPrimaryVariant</item>
+	</style>
+</resources>
