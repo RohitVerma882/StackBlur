@@ -1,5 +1,5 @@
 # StackBlur
-[![](https://raster.shields.io/badge/Minimum%20SDK-21-%23ff5252.png)]()
+[![](https://raster.shields.io/badge/Minimum%20SDK-21-%23ff5252.png)](https://github.com/RohitVermaOP/StackBlur)
 [![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 
