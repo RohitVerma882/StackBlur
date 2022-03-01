@@ -44,6 +44,10 @@ Developed by ```Rohit Verma```
 + [Instagram](http://instagram.com/mr_rohitverma88)
 + [Telegram](http://t.me/RohitVerma88)
 
+## Thanks to
+- [DrKLO](https://github.com/DrKLO) for the awesome [Telegram](https://github.com/DrKLO/Telegram)
+- [Kikoso](https://github.com/kikoso) for the [android-stackblur](https://github.com/kikoso/android-stackblur)
+
 ## License
 ```
 StackBlur is free software: you can redistribute it and/or modify
