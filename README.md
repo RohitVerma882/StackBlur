@@ -1,6 +1,7 @@
 # StackBlur
+[![](https://raster.shields.io/badge/Minimum%20SDK-21-%23ff5252.png)]()
 [![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 
 Simple library which Blur bitmaps native Way
 
@@ -42,3 +43,19 @@ blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
 Developed by ```Rohit Verma```
 + [Instagram](http://instagram.com/mr_rohitverma88)
 + [Telegram](http://t.me/RohitVerma88)
+
+## License
+```
+StackBlur is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+StackBlur is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with StackBlur.  If not, see <https://www.gnu.org/licenses/>.
+```
