@@ -1,14 +1,13 @@
 # StackBlur
-Simple library which Blur bitmaps native way
+[![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
+
+Simple library which Blur bitmaps native Way
 
 ### Screenshot
 
 ![](screenshot.jpg)
 
 ### Dowload 
-
-[![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
-
 
 Add to project's build.gradle
 ```
@@ -24,17 +23,17 @@ implementation 'com.github.RohitVermaOP:StackBlur:<latest-version>'
 
 Method 1
 ```java
-        // StackBlur#blurBitmap
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
-		blurImageView.setImageBitmap(StackBlur.blurBitmap(bitmap, 40));
+// StackBlur#blurBitmap
+Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
+blurImageView.setImageBitmap(StackBlur.blurBitmap(bitmap, 40));
 ```
 OR
 
 Method 2
 ```java
-        // StackBlur#blurBitmap2 method suports multi thered and faster
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
-		blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
+// StackBlur#blurBitmap2 method suports multi thered and faster
+Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
+blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
 ```
 
 ## Developer
