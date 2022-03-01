@@ -40,5 +40,4 @@ dependencies {
 
     implementation 'cat.ereza:customactivityoncrash:2.3.0'
     implementation project(':library')
-	// implementation 'com.github.itsrohit:stackblur:1.0.0'
 }
