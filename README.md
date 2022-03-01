@@ -5,11 +5,11 @@
 
 Simple library which Blur bitmaps native Way
 
-### Screenshot
+## Screenshot
 
 ![](screenshot.jpg)
 
-### Dowload 
+## Dowload 
 
 Add to project's build.gradle
 ```
@@ -21,7 +21,7 @@ Add to module-level build.gradle
 implementation 'com.github.RohitVermaOP:StackBlur:<latest-version>'
 ```
 
-### Usage
+## Usage
 
 Method 1
 ```java
