@@ -3,8 +3,6 @@ package com.itsrohit.stackblur;
 import android.graphics.Bitmap;
 import java.util.concurrent.Callable;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class StackBlur {
 	private static native void sBlurBitmap(Bitmap bitmap, int radius);
