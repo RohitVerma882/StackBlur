@@ -19,8 +19,5 @@ public class StackBlurApp extends Application {
 			.trackActivities(true)
 			.minTimeBetweenCrashesMs(2000)
 			.apply();
-			
-			// init (preload) StackBlur lib for faster process
-			StackBlur.initLib();
 	}
 }

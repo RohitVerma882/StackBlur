@@ -1,19 +1,34 @@
 #include <jni.h>
 #include <android/bitmap.h>
 #include <algorithm>
+#include <string.h>
+#include <stdio.h>
+#include <android/log.h>
 #include "stackblur.h"
 
 extern "C" {
-    JNIEXPORT void Java_com_itsrohit_stackblur_StackBlur_stackBlurBitmap(JNIEnv * env, jclass clazz, jobject bitmap, jint radius) {
+    JNIEXPORT void Java_com_itsrohit_stackblur_StackBlur_sBlurBitmap(JNIEnv * env, jclass clazz, jobject bitmap, jint radius) {
+        // Properties
+        AndroidBitmapInfo info;
+        unsigned char * pixels = nullptr;
+        int reason;
+
+        // Check radius
         if (radius < 1) {
+            LOGE("failed !  radius=%d", radius);
             return;
         }
 
-        AndroidBitmapInfo info;
-        if (AndroidBitmap_getInfo(env, bitmap, & info) != ANDROID_BITMAP_RESULT_SUCCESS) {
+        // get image info
+        if ((reason = AndroidBitmap_getInfo(env, bitmap, & info)) != ANDROID_BITMAP_RESULT_SUCCESS) {
+            LOGE("AndroidBitmap_getInfo() failed ! error=%d", reason);
             return;
         }
+
+        // Check image
         if (info.format != ANDROID_BITMAP_FORMAT_RGBA_8888) {
+            LOGE("Bitmap format is not RGBA_8888!");
+            LOGE("==> %d", info.format);
             return;
         }
 
@@ -21,9 +36,10 @@ extern "C" {
         int h = info.height;
         int stride = info.stride;
 
-        unsigned char * pixels = nullptr;
-        AndroidBitmap_lockPixels(env, bitmap, (void ** ) & pixels);
+        // Lock all images
+        reason = AndroidBitmap_lockPixels(env, bitmap, (void ** ) & pixels);
         if (!pixels) {
+            LOGE("AndroidBitmap_lockPixels() failed ! error=%d", reason);
             return;
         }
         // Constants
@@ -56,7 +72,7 @@ extern "C" {
         int * dv = new int[dvcount];
         int i;
         for (i = 0;
-            (size_t) i < dvcount; i++) {
+                (size_t) i < dvcount; i++) {
             dv[i] = (i / divsum);
         }
 
@@ -255,6 +271,43 @@ extern "C" {
         delete[] b;
         delete[] a;
         delete[] dv;
+
+        // Unlocks everything
+        AndroidBitmap_unlockPixels(env, bitmap);
+    }
+
+    JNIEXPORT void JNICALL Java_com_itsrohit_stackblur_StackBlur_sBlurBitmap2(JNIEnv* env, jclass clzz, jobject bitmap, jint radius, jint threadCount, jint threadIndex, jint round) {
+        // Properties
+        AndroidBitmapInfo   info;
+        void*               pixels;
+
+        int reason;
+
+        // Get image info
+        if ((reason = AndroidBitmap_getInfo(env, bitmap, &info)) != 0) {
+            LOGE("AndroidBitmap_getInfo() failed ! error=%d", reason);
+            return;
+        }
+
+        // Check image
+        if (info.format != ANDROID_BITMAP_FORMAT_RGBA_8888) {
+            LOGE("Bitmap format is not RGBA_8888!");
+            LOGE("==> %d", info.format);
+            return;
+        }
+
+        // Lock all images
+        if ((reason = AndroidBitmap_lockPixels(env, bitmap, &pixels)) != 0) {
+            LOGE("AndroidBitmap_lockPixels() failed ! error=%d", reason);
+            return;
+        }
+
+        int h = info.height;
+        int w = info.width;
+
+        blurJob((unsigned char*)pixels, w, h, radius, threadCount, threadIndex, round);
+
+        // Unlocks everything
         AndroidBitmap_unlockPixels(env, bitmap);
     }
 }
