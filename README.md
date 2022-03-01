@@ -45,9 +45,9 @@ Developed by ```Rohit Verma```
 + [Telegram](http://t.me/RohitVerma88)
 
 ## Reference
-- [Telegram](https://github.com/DrKLO/Telegram) OpenSource Project
+- [Telegram Opensource Project](https://github.com/DrKLO/Telegram)
 - [android-stackblur](https://github.com/kikoso/android-stackblur)
-Sample Image from [Unsplash](https://unsplash.com/photos/LSFuPFE9vKE)
+- Sample Image from [Unsplash](https://unsplash.com/photos/LSFuPFE9vKE)
 
 ## License
 ```
