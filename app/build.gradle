@@ -39,5 +39,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.2"
 
     implementation 'cat.ereza:customactivityoncrash:2.3.0'
-    implementation project(':library')
+    // implementation 'com.github.RohitVermaOP:StackBlur:1.0.2'
+	implementation project(':library')
 }
