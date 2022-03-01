@@ -1,13 +1,12 @@
 plugins {
     id 'com.android.library'
-    id 'maven-publish'
 }
 
 android {
     compileSdkVersion 31
     buildToolsVersion "31.0.0"
-    ndkVersion=23.1.7779620
-    ndkPath '/data/data/com.termux/files/home/android-ndk-r23'
+    ndkVersion "23.0.7599858"
+    ndkPath "/data/data/com.termux/files/home/android-ndk-r23"
 
     defaultConfig {
         minSdkVersion 21
@@ -48,72 +47,4 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-}
-
-Properties localProperties = new Properties()
-localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId 'com.github.itsrohit'
-                artifactId 'stackblur'
-                version '1.0.0'
-
-                pom {
-                    name = 'StackBlur'
-                    packaging = 'aar'
-                    description = 'Android StackBlur (Native method)'
-                    url = 'https://github.com/RohitVermaOP/StackBlur'
-
-                    scm {
-                        connection = 'https://github.com/RohitVermaOP/StackBlur.git'
-                        developerConnection = 'https://github.com/RohitVermaOP/StackBlur.git'
-                        url = 'https://github.com/RohitVermaOP/StackBlur'
-                    }
-
-                    licenses {
-                        license {
-                            name = 'GNU General Public License v3.0'
-                            url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
-                        }
-                    }
-
-                    developers {
-                        developer {
-                            id = 'RohitVermaOP'
-                            name = 'Rohit Verma'
-                            email = 'rohitkumar882333@gmail.com'
-                        }
-                    }
-
-                    withXml {
-                        def dependenciesNode = asNode().appendNode('dependencies')
-
-                        project.configurations.implementation.allDependencies.each {
-                            def dependencyNode = dependenciesNode.appendNode('dependency')
-                            dependencyNode.appendNode('groupId', it.group)
-                            dependencyNode.appendNode('artifactId', it.name)
-                            dependencyNode.appendNode('version', it.version)
-                        }
-                    }
-                }
-            }
-        }
-
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/RohitVermaOP/StackBlur")
-
-                credentials {
-                    username = localProperties.getProperty('gpr.usr')
-                    password = localProperties.getProperty('gpr.key')
-                }
-            }
-        }
-    }
 }
