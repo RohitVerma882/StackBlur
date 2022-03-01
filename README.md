@@ -9,7 +9,7 @@ Simple library which Blur bitmaps native Way
 
 ![](screenshot.jpg)
 
-## Dowload 
+## Download 
 
 Add to project's build.gradle
 ```
