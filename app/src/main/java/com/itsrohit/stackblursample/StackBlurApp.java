@@ -2,6 +2,7 @@ package com.itsrohit.stackblursample;
 
 import android.app.Application;
 import cat.ereza.customactivityoncrash.config.CaocConfig;
+import com.itsrohit.stackblur.StackBlur;
 
 public class StackBlurApp extends Application {
 
@@ -14,9 +15,12 @@ public class StackBlurApp extends Application {
 			.enabled(true)
 			.showErrorDetails(true)
 			.showRestartButton(true)
-			.logErrorOnRestart(true)
+			.logErrorOnRestart(true) 
 			.trackActivities(true)
 			.minTimeBetweenCrashesMs(2000)
 			.apply();
+			
+		// init StackBlur lib (not requried)
+		StackBlur.initLib();
 	}
 }

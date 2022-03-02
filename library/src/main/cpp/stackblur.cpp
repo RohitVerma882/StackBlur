@@ -15,13 +15,13 @@ extern "C" {
 
         // Check radius
         if (radius < 1) {
-            LOGE("failed !  radius=%d", radius);
+            LOGE("check radius failed! radius=%d", radius);
             return;
         }
 
         // get image info
         if ((reason = AndroidBitmap_getInfo(env, bitmap, & info)) != ANDROID_BITMAP_RESULT_SUCCESS) {
-            LOGE("AndroidBitmap_getInfo() failed ! error=%d", reason);
+            LOGE("AndroidBitmap_getInfo() failed! error=%d", reason);
             return;
         }
 
@@ -280,12 +280,11 @@ extern "C" {
         // Properties
         AndroidBitmapInfo   info;
         void*               pixels;
-
         int reason;
 
         // Get image info
         if ((reason = AndroidBitmap_getInfo(env, bitmap, &info)) != 0) {
-            LOGE("AndroidBitmap_getInfo() failed ! error=%d", reason);
+            LOGE("AndroidBitmap_getInfo() failed! error=%d", reason);
             return;
         }
 
@@ -298,7 +297,7 @@ extern "C" {
 
         // Lock all images
         if ((reason = AndroidBitmap_lockPixels(env, bitmap, &pixels)) != 0) {
-            LOGE("AndroidBitmap_lockPixels() failed ! error=%d", reason);
+            LOGE("AndroidBitmap_lockPixels() failed! error=%d", reason);
             return;
         }
 

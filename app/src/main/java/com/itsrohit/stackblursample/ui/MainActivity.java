@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 	private void loadBluredImage() {
 		// StackBlur#blurBitmap2 method suports multi thered and faster
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
-		blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
+		blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 50));
 	}
 }

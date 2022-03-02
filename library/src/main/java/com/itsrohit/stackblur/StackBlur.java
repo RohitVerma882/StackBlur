@@ -3,17 +3,35 @@ package com.itsrohit.stackblur;
 import android.graphics.Bitmap;
 import java.util.concurrent.Callable;
 import java.util.ArrayList;
+import com.itsrohit.stackblur.utils.Utils;
+import android.util.Log;
 
 public class StackBlur {
+	
+	private static final String TAG = StackBlur.class.getSimpleName();
+	
 	private static native void sBlurBitmap(Bitmap bitmap, int radius);
     private static native void sBlurBitmap2(Bitmap bitmap, int radius, int threadCount, int threadIndex, int round);
 	
-    static {
-        System.loadLibrary("stackblur");
-    }
+	private static String LIB_NAME = "stackblur";
+	private static boolean libLoaded = false;
+	
+	static {
+		initLib();
+	}
+	
+	public static void initLib() {
+		if (libLoaded) {
+			return;
+		}
+	
+		System.loadLibrary(LIB_NAME);
+		libLoaded = true;
+	}
 
 	public static Bitmap blurBitmap(Bitmap bitmap, int radius) {
 		if (bitmap == null || radius <= 0) {
+			Log.e(TAG, "blurBitmap failed! bitmap=" + (bitmap == null ? "null" : "not null") + ", radius=" + radius);
 			return bitmap;
 		}
 
@@ -25,6 +43,7 @@ public class StackBlur {
 	
 	public static Bitmap blurBitmap2(Bitmap bitmap, int radius) {
 		if (bitmap == null || radius <= 0) {
+			Log.e(TAG, "blurBitmap2 failed! bitmap=" + (bitmap == null ? " null" : "not null") + ", radius=" + radius);
 			return bitmap;
 		}
 		
@@ -35,8 +54,8 @@ public class StackBlur {
 		ArrayList<BlurTask> horizontal = new ArrayList<BlurTask>(cores);
 		ArrayList<BlurTask> vertical = new ArrayList<BlurTask>(cores);
 		for (int i = 0; i < cores; i++) {
-			horizontal.add(new BlurTask(bitmapOut, (int) radius, cores, i, 1));
-			vertical.add(new BlurTask(bitmapOut, (int) radius, cores, i, 2));
+			horizontal.add(new BlurTask(bitmapOut, radius, cores, i, 1));
+			vertical.add(new BlurTask(bitmapOut, radius, cores, i, 2));
 		}
 
 		try {
