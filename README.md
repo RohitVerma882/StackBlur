@@ -1,5 +1,5 @@
 # StackBlur
-[![](https://raster.shields.io/badge/Minimum%20SDK-21-%23ff5252.png)](https://github.com/RohitVermaOP/StackBlur)
+[![](https://raster.shields.io/badge/20SDK-21-%23ff5252.png)](https://github.com/RohitVermaOP/StackBlur)
 [![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 
@@ -12,28 +12,31 @@ Simple library which Blur bitmaps native Way
 ## Download 
 
 Add to project's build.gradle
-```
-maven { url 'https://jitpack.io' }
+```gradle
+allprojects {
+	repositories {
+		maven { url 'https://jitpack.io' }
+	}
+}
 ```
 
 Add to module-level build.gradle
-```
-implementation 'com.github.RohitVermaOP:StackBlur:<latest-version>'
+```gradle
+dependencies { 
+    implementation 'com.github.RohitVermaOP:StackBlur:<latest-version>'
+}
 ```
 
 ## Usage
 
-Method 1
+StackBlur#blurBitmap
 ```java
-// StackBlur#blurBitmap
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap(bitmap, 40));
 ```
-OR
 
-Method 2
+StackBlur#blurBitmap2 (Support multi thread and faster)
 ```java
-// StackBlur#blurBitmap2 method suports multi thered and faster
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
 ```
@@ -45,6 +48,6 @@ Developed by ```Rohit Verma```
 + [Telegram](http://t.me/RohitVerma88)
 
 ## Special Thanks
-- [Telegram OpenSource Project](https://github.com/DrKLO/Telegram)
-- [android-stackblur](https://github.com/kikoso/android-stackblur)
-- Sample Image from [Unsplash](https://unsplash.com/photos/LSFuPFE9vKE)
++ [Telegram](https://github.com/DrKLO/Telegram)
++ [android-stackblur](https://github.com/kikoso/android-stackblur)
++ Sample Image from [Unsplash](https://unsplash.com/photos/LSFuPFE9vKE)
