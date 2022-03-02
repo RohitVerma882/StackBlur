@@ -6,7 +6,7 @@ android {
     compileSdkVersion 31
     buildToolsVersion "31.0.0"
     ndkVersion "23.0.7599858"
-    // ndkPath "/data/data/com.termux/files/home/android-ndk-r23"
+    ndkPath "/data/data/com.termux/files/home/android-ndk-r23"
 
     defaultConfig {
         minSdkVersion 21
