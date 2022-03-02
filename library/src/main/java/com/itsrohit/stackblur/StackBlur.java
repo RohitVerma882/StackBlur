@@ -20,7 +20,7 @@ public class StackBlur {
 		initLib();
 	}
 	
-	public static void initLib() {
+	public static synchronized void initLib() {
 		if (libLoaded) {
 			return;
 		}
