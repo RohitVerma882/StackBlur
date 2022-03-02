@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project(stackblur)
 
-set(CMAKE_SYSROOT /data/data/com.termux/files/home/ndk-r21e-sysroot/sysroot)
+#set(CMAKE_SYSROOT /data/data/com.termux/files/home/ndk-r21e-sysroot/sysroot)
 
 #stackblur
 add_library(stackblur SHARED stackblur.cpp)
