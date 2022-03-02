@@ -29,6 +29,11 @@ dependencies {
 
 ## Usage
 
+StackBlur#initLib :- Add to application or activity onCreate (Not requried)
+```java
+StackBlur.initLib();
+```
+
 StackBlur#blurBitmap
 ```java
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
