@@ -3,8 +3,11 @@ package com.itsrohit.stackblur;
 import android.graphics.Bitmap;
 import java.util.concurrent.Callable;
 import java.util.ArrayList;
-import com.itsrohit.stackblur.utils.Utils;
 import android.util.Log;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import androidx.annotation.NonNull;
 
 public class StackBlur {
 	
@@ -16,8 +19,14 @@ public class StackBlur {
 	private static String LIB_NAME = "stackblur";
 	private static boolean libLoaded = false;
 	
+	private static final int EXECUTOR_THREADS = Runtime.getRuntime().availableProcessors();
+	private static final ExecutorService EXECUTOR = Executors.newFixedThreadPool(EXECUTOR_THREADS);
+	
 	static {
 		initLib();
+	}
+	
+	private StackBlur() {
 	}
 	
 	public static synchronized void initLib() {
@@ -29,7 +38,7 @@ public class StackBlur {
 		libLoaded = true;
 	}
 
-	public static Bitmap blurBitmap(Bitmap bitmap, int radius) {
+	public static Bitmap blurBitmap(@NonNull Bitmap bitmap, int radius) {
 		if (bitmap == null || radius <= 0) {
 			Log.e(TAG, "blurBitmap failed! bitmap=" + (bitmap == null ? "null" : "not null") + ", radius=" + radius);
 			return bitmap;
@@ -41,7 +50,7 @@ public class StackBlur {
 		return bitmapOut;
 	}
 	
-	public static Bitmap blurBitmap2(Bitmap bitmap, int radius) {
+	public static Bitmap blurBitmap2(@NonNull Bitmap bitmap, int radius) {
 		if (bitmap == null || radius <= 0) {
 			Log.e(TAG, "blurBitmap2 failed! bitmap=" + (bitmap == null ? " null" : "not null") + ", radius=" + radius);
 			return bitmap;
@@ -49,7 +58,7 @@ public class StackBlur {
 		
 		Bitmap bitmapOut = bitmap.copy(Bitmap.Config.ARGB_8888, true);
 
-		int cores = Utils.EXECUTOR_THREADS;
+		int cores = EXECUTOR_THREADS;
 
 		ArrayList<BlurTask> horizontal = new ArrayList<BlurTask>(cores);
 		ArrayList<BlurTask> vertical = new ArrayList<BlurTask>(cores);
@@ -59,13 +68,13 @@ public class StackBlur {
 		}
 
 		try {
-			Utils.EXECUTOR.invokeAll(horizontal);
+			EXECUTOR.invokeAll(horizontal);
 		} catch (InterruptedException e) {
 			return bitmapOut;
 		}
 
 		try {
-			Utils.EXECUTOR.invokeAll(vertical);
+			EXECUTOR.invokeAll(vertical);
 		} catch (InterruptedException e) {
 			return bitmapOut;
 		}
@@ -79,7 +88,7 @@ public class StackBlur {
 		private final int _coreIndex;
 		private final int _round;
 
-		public BlurTask(Bitmap bitmap, int radius, int totalCores, int coreIndex, int round) {
+		public BlurTask(@NonNull Bitmap bitmap, int radius, int totalCores, int coreIndex, int round) {
 			_bitmap = bitmap;
 			_radius = radius;
 			_totalCores = totalCores;

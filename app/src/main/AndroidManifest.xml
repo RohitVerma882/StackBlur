@@ -4,8 +4,8 @@
     package="com.itsrohit.stackblursample">
     
 	<application 
-		android:allowBackup="true"
-        android:fullBackupOnly="true"
+		android:allowBackup="false"
+        android:fullBackupOnly="false"
 		android:name="com.itsrohit.stackblursample.StackBlurApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

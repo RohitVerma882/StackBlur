@@ -2,11 +2,13 @@ package com.itsrohit.stackblursample.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import com.itsrohit.stackblursample.R;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.itsrohit.stackblursample.R;
 import com.itsrohit.stackblur.StackBlur;
 
 public class MainActivity extends AppCompatActivity {

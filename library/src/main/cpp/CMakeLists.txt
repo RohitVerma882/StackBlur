@@ -4,8 +4,11 @@ project(stackblur)
 
 set(CMAKE_SYSROOT /data/data/com.termux/files/home/ndk-r21e-sysroot/sysroot)
 
+#
 #stackblur
+#
 add_library(stackblur SHARED stackblur.cpp)
+
 target_compile_options(stackblur PUBLIC -ffast-math -Os -funroll-loops -ffast-math -fno-strict-aliasing -fno-math-errno)
 
-target_link_libraries(stackblur jnigraphics log)
+target_link_libraries(stackblur jnigraphics log c++_static)
