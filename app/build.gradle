@@ -37,6 +37,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     
     implementation 'cat.ereza:customactivityoncrash:2.3.0'
-    // implementation 'com.github.RohitVermaOP:StackBlur:1.0.3'
+    // implementation 'com.github.RohitVermaOP:StackBlur:1.0.4'
 	implementation project(':library')
 }
