@@ -55,4 +55,4 @@ Developed by ```Rohit Verma```
 ## Special Thanks
 + [Telegram](https://github.com/DrKLO/Telegram)
 + [android-stackblur](https://github.com/kikoso/android-stackblur)
-+ Sample Image from [Unsplash](https://unsplash.com/photos/LSFuPFE9vKE)
++ [sample_img](https://unsplash.com/photos/LSFuPFE9vKE) from [Unsplash](https://unsplash.com)
