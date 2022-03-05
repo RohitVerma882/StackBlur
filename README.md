@@ -1,7 +1,7 @@
 # StackBlur
 [![](https://img.shields.io/badge/Minimum%20Sdk-21-2196F3)](https://github.com/RohitVermaOP/StackBlur)
 [![](https://jitpack.io/v/RohitVermaOP/StackBlur.svg)](https://jitpack.io/#RohitVermaOP/StackBlur)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
 Simple library which Blur bitmaps native Way
 
