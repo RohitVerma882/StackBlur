@@ -21,6 +21,7 @@ android {
 
         externalNativeBuild {
             cmake {
+                version '3.18.5+'
                 arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-21'
             }
         }
@@ -28,7 +29,6 @@ android {
 
     externalNativeBuild {
         cmake {
-            // version '3.18.5+'
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
