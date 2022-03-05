@@ -29,18 +29,18 @@ dependencies {
 
 ## Usage
 
-StackBlur#initLib :- Add to application or activity onCreate (Not requried)
+Add to application or activity (Not requried)
 ```java
 StackBlur.initLib();
 ```
 
-StackBlur#blurBitmap
+blurBitmap
 ```java
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap(bitmap, 40));
 ```
 
-StackBlur#blurBitmap2 (Support multi thread and faster)
+blurBitmap2 (Support multi thread and faster)
 ```java
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
@@ -56,3 +56,7 @@ Developed by ```Rohit Verma```
 + [Telegram](https://github.com/DrKLO/Telegram)
 + [android-stackblur](https://github.com/kikoso/android-stackblur)
 + [sample_img](https://unsplash.com/photos/LSFuPFE9vKE) from [Unsplash](https://unsplash.com)
+
+## License
+
+[Apache 2.0](./LICENSE)
