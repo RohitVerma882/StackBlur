@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-    package="com.itsrohit.stackblursample">
+    package="com.rohitop.stackblursample">
     
 	<application 
 		android:allowBackup="false"
         android:fullBackupOnly="false"
-		android:name="com.itsrohit.stackblursample.StackBlurApp"
+		android:name="com.rohitop.stackblursample.StackBlurApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="false"
@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
 		tools:replace="android:supportsRtl">
 		
-		<activity android:name="com.itsrohit.stackblursample.ui.MainActivity"
+		<activity android:name="com.rohitop.stackblursample.ui.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" 
             android:hardwareAccelerated="true" 
             android:windowSoftInputMode="adjustResize"

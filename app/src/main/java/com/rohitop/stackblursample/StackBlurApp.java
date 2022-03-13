@@ -1,10 +1,10 @@
-package com.itsrohit.stackblursample;
+package com.rohitop.stackblursample;
 
 import android.app.Application;
 
 import cat.ereza.customactivityoncrash.config.CaocConfig;
 
-import com.itsrohit.stackblur.StackBlur;
+import com.rohitop.stackblur.StackBlur;
 
 public class StackBlurApp extends Application {
 

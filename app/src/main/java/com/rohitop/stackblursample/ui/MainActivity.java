@@ -1,4 +1,4 @@
-package com.itsrohit.stackblursample.ui;
+package com.rohitop.stackblursample.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,8 +8,9 @@ import android.graphics.BitmapFactory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.itsrohit.stackblursample.R;
-import com.itsrohit.stackblur.StackBlur;
+import com.rohitop.stackblursample.R;
+
+import com.rohitop.stackblur.StackBlur;
 
 public class MainActivity extends AppCompatActivity {
 

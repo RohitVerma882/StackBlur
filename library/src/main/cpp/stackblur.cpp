@@ -7,7 +7,7 @@
 #include "stackblur.h"
 
 extern "C" {
-    JNIEXPORT void Java_com_itsrohit_stackblur_StackBlur_sBlurBitmap(JNIEnv * env, jclass clazz, jobject bitmap, jint radius) {
+    JNIEXPORT void Java_com_rohitop_stackblur_StackBlur_sBlurBitmap(JNIEnv * env, jclass clazz, jobject bitmap, jint radius) {
         // Properties
         AndroidBitmapInfo info;
         unsigned char * pixels = nullptr;
@@ -276,7 +276,7 @@ extern "C" {
         AndroidBitmap_unlockPixels(env, bitmap);
     }
 
-    JNIEXPORT void JNICALL Java_com_itsrohit_stackblur_StackBlur_sBlurBitmap2(JNIEnv* env, jclass clzz, jobject bitmap, jint radius, jint threadCount, jint threadIndex, jint round) {
+    JNIEXPORT void JNICALL Java_com_rohitop_stackblur_StackBlur_sBlurBitmap2(JNIEnv* env, jclass clzz, jobject bitmap, jint radius, jint threadCount, jint threadIndex, jint round) {
         // Properties
         AndroidBitmapInfo   info;
         void*               pixels;

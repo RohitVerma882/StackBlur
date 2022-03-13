@@ -1,4 +1,4 @@
-package com.itsrohit.stackblur;
+package com.rohitop.stackblur;
 
 import android.graphics.Bitmap;
 import java.util.concurrent.Callable;
