@@ -48,11 +48,11 @@ blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
 
 ## Developer
 
-Developed by ```Rohit Verma```
+#### Developed by ```Rohit Verma```
 + [Instagram](http://instagram.com/mr_rohitverma88)
 + [Telegram](http://t.me/RohitVerma88)
 
-## Special Thanks
+## Reference
 + [Telegram](https://github.com/DrKLO/Telegram)
 + [android-stackblur](https://github.com/kikoso/android-stackblur)
 + [sample_img](https://unsplash.com/photos/LSFuPFE9vKE) from [Unsplash](https://unsplash.com)
