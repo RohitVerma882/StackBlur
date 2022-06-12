@@ -11,7 +11,7 @@ Simple library which Blur bitmaps native Way
 
 ## Download 
 
-Add to project's build.gradle
+#### Add to project's build.gradle
 ```gradle
 allprojects {
 	repositories {
@@ -20,7 +20,7 @@ allprojects {
 }
 ```
 
-Add to module-level build.gradle
+#### Add to module-level build.gradle
 ```gradle
 dependencies { 
     implementation 'com.github.RohitVermaOP:StackBlur:<latest-version>'
@@ -29,18 +29,18 @@ dependencies {
 
 ## Usage
 
-Add to application or activity (Not requried)
+#### Add to application or activity (Not requried)
 ```java
 StackBlur.initLib();
 ```
 
-blurBitmap
+#### blurBitmap
 ```java
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap(bitmap, 40));
 ```
 
-blurBitmap2 (Support multi thread and faster)
+#### blurBitmap2 (Support multi thread and faster)
 ```java
 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sample_img);
 blurImageView.setImageBitmap(StackBlur.blurBitmap2(bitmap, 40));
