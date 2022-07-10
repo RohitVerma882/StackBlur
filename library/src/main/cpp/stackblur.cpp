@@ -6,9 +6,9 @@
 #include <android/log.h>
 #include "stackblur.h"
 
-#ifdef __cplusplus
+
 extern "C" {
-#endif
+
 
     JNIEXPORT void Java_com_rohitop_stackblur_StackBlur_sBlurBitmap(JNIEnv * env, jclass clazz, jobject bitmap, jint radius) {
         // Properties
@@ -313,6 +313,6 @@ extern "C" {
         AndroidBitmap_unlockPixels(env, bitmap);
     }
 
-#ifdef __cplusplus
+
 }
-#endif /* __cplusplus */
+
